@@ -16,7 +16,7 @@ MPIPATH         = /home/shdi/mpich-install
 
 export SDCHOME=[AIDPATH]/SDC
 
-#You need to replace [AIDPATH] by your installation path of AID, such as /home/shdi/aid-0.1
+You need to replace [AIDPATH] by your installation path of AID, such as /home/shdi/aid-0.1
 
 3. set LD_LIBRARY_PATH :
 
