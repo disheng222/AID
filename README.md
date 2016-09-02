@@ -2,6 +2,7 @@
 Adaptive Impact-driven Silent Data Corruption Dector for HPC applications
 
 INSTALL:
+
 (1) Modify Makefile as follows:
 
 In Makefile, replace [AID_INSTALL_PATH] by AID path, and replace [MPI_INSTALL_PATH] by MPI installation directory.
