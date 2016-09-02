@@ -2,7 +2,7 @@
 Adaptive Impact-driven Silent Data Corruption Dector for HPC applications
 
 INSTALL:
-1. Modify Makefile as follows:
+(1) Modify Makefile as follows:
 
 In Makefile, replace [AID_INSTALL_PATH] by AID path, and replace [MPI_INSTALL_PATH] by MPI installation directory.
 
@@ -12,17 +12,17 @@ AIDPATH         = /home/shdi/aid-0.1
 
 MPIPATH         = /home/shdi/mpich-install
 
-2. set AID PATH as environment variable (such as in ~/.bashrc):
+(2) set AID PATH as environment variable (such as in ~/.bashrc):
 
 export SDCHOME=[AIDPATH]/SDC
 
 You need to replace [AIDPATH] by your installation path of AID, such as /home/shdi/aid-0.1
 
-3. set LD_LIBRARY_PATH :
+(3) set LD_LIBRARY_PATH :
 
 export LD_LIBRARY_PATH= $SDCHOME/lib:$LD_LIBRARY_PATH
 
-4. Go to the [AIDPATH], then run the following commands:
+(4) Go to the [AIDPATH], then run the following commands:
 
 make
 
