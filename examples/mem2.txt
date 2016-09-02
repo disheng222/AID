@@ -1,0 +1,13 @@
+===================i=70000===================
+Mem Size:		21072
+Mem Resident:		2348
+Mem High Water Mark:	2368
+Mem Shared:		1284
+Mem Text:		1064
+Mem Library:		4348
+Mem Heap:		500
+Mem Locked:		0
+Mem Stack:		140
+Mem Pagesize:		4096
+=========================================
+
