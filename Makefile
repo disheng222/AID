@@ -10,11 +10,11 @@
 ##=======================================================================
 
 AIDPATH         = [AID_INSTALL_PATH]
-#AIDPATH         = /home/fti/AID/aid-0.2
+#AIDPATH         = /tmp/AID
 #example: AIDPATH = /home/shdi/aid-0.1
 MPIPATH		= [MPI_INSTALL_PATH]
-#MPIPATH	= /home/fti/mpi_install
-#example: MPIPATH = /home/shdi/mpi_install
+#MPIPATH	= /home/fti/MPICH/mpich-3.2-install
+#example: MPIPATH = /home/fti/MPICH/mpich-3.2-install
 
 ##=======================================================================
 ##   DIRECTORY TREE
