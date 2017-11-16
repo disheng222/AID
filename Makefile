@@ -10,11 +10,11 @@
 ##=======================================================================
 
 AIDPATH         = [AID_INSTALL_PATH]
-#AIDPATH         = /tmp/AID
+#AIDPATH         = /home/sdi/Development/AID/aid-0.2
 #example: AIDPATH = /home/shdi/aid-0.1
 MPIPATH		= [MPI_INSTALL_PATH]
-#MPIPATH	= /home/fti/MPICH/mpich-3.2-install
-#example: MPIPATH = /home/fti/MPICH/mpich-3.2-install
+#MPIPATH	= /home/sdi/Install/mpich-3.2-install
+#example: MPIPATH = /home/shdi/mpi_install
 
 ##=======================================================================
 ##   DIRECTORY TREE
@@ -51,7 +51,7 @@ MPIFLAGS	= -I$(MPIPATH)
 OBJS		= $(OBJ)/dictionary.o $(OBJ)/iniparser.o \
 		  $(OBJ)/conf.o $(OBJ)/tools.o\
 		  $(OBJ)/sdc_memalloc.o $(OBJ)/sdc_datalist.o $(OBJ)/sdc_datasetlist.o $(OBJ)/sdc_solution.o $(OBJ)/sdc_detector.o \
-		  #$(OBJ)/sdcf.o $(OBJ)/sdc_interface.o $(OBJ)/fort_writefile.o \
+		  $(OBJ)/sdcf.o $(OBJ)/sdc_interface.o $(OBJ)/fort_writefile.o \
 
 SHARED		= libsdc.so
 STATIC		= libsdc.a
@@ -81,9 +81,12 @@ $(SHARED):	$(OBJS)
 $(STATIC):	$(OBJS)
 		$(AR) -cvq $(LIB)/$(STATIC) $(OBJS)
 install:
-		if [ ! -d "$(AIDPATH)/SDC" ]; then mkdir $(AIDPATH)/SDC; fi
-		if [ ! -d "$(AIDPATH)/SDC/$(LIB)" ]; then mkdir $(AIDPATH)/SDC/$(LIB); fi
-		if [ ! -d "$(AIDPATH)/SDC/$(INC)" ]; then mkdir $(AIDPATH)/SDC/$(INC); fi
+		@mkdir -p $(AIDPATH)/SDC
+		@mkdir -p $(AIDPATH)/SDC/$(LIB)
+		@mkdir -p $(AIDPATH)/SDC/$(INC)
+		#if [ ! -d "$(AIDPATH)/SDC" ]; then mkdir $(AIDPATH)/SDC; fi
+		#if [ ! -d "$(AIDPATH)/SDC/$(LIB)" ]; then mkdir $(AIDPATH)/SDC/$(LIB); fi
+		#if [ ! -d "$(AIDPATH)/SDC/$(INC)" ]; then mkdir $(AIDPATH)/SDC/$(INC); fi
 		rm -f $(AIDPATH)/SDC/$(LIB)/* $(AIDPATH)/SDC/$(INC)/*
 		cp $(INC)/* $(AIDPATH)/SDC/$(INC)/
 		cp $(LIB)/* $(AIDPATH)/SDC/$(LIB)/
