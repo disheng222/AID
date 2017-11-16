@@ -67,7 +67,7 @@ test_hd:
 		$(MPIRUN) -np 8 ./hd 
 
 clean:
-		rm -f hd results/*;rm -f simple_fortran_5d;rm -f simple_fortran_4d;rm -f simple_fortran_3d;rm -rf simple_fortran_2d;rm -f simple_fortran_1d
+		rm -f sample simple_c_4d hd results/*;rm -f simple_fortran_5d;rm -f simple_fortran_4d;rm -f simple_fortran_3d;rm -rf simple_fortran_2d;rm -f simple_fortran_1d
 
 .PHONY:		hd hdt hdv clean
 
