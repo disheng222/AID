@@ -171,7 +171,7 @@ int sdc_snapshot_1var_F(SDC_dataset *pp, void* var)
 int SDC_Snapshot()
 {
 	SDC_dataset *pp;
-	int existError;
+	int existError = 0;
 	if(dataset_head==NULL)
 	{
 		counter++;	
@@ -183,7 +183,9 @@ int SDC_Snapshot()
 	{
 		existError = sdc_snapshot_1var_F(pp, pp->var);
 		if(existError==1)
-			break;
+		{
+			pp->existErr = 1;
+		}
 		//move pp
 		pp = pp->next;	
 	}
@@ -268,4 +270,19 @@ double computeTotalElapsedTime()
 {
 	 double elapsed = ((endTime.tv_sec*1000000+endTime.tv_usec)-(startTime.tv_sec*1000000+startTime.tv_usec))/1000000.0;
 	 return elapsed;
+}
+
+void incrementFPNum()
+{
+	SDC_dataset *pp = dataset_head->next;
+	while(pp!=NULL)
+	{
+		if(pp->existErr==1)
+		{
+			pp->FPNum++;
+			pp->existErr = 0;
+		}
+		//move pp
+		pp = pp->next;	
+	}
 }

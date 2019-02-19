@@ -525,4 +525,9 @@ MODULE SDC
 		implicit none
 		call print_cost_ratio_c()
 	END SUBROUTINE
+
+	SUBROUTINE SDC_Increment_Fpnum()
+		implicit none
+		call sdc_increment_fpnum_c();
+	END SUBROUTINE
 END MODULE SDC

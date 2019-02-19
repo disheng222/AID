@@ -26,3 +26,5 @@ typedef struct SDC_data
 } SDC_data;
 
 #endif   /* ----- #ifndef _DATALIST_H  ----- */
+
+int compute_curStepLength(SDC_data *head);

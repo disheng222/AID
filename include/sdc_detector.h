@@ -83,6 +83,7 @@ typedef struct SDC_dataset {
 	double max_err_order2; //only used by AID for evaluation
 	
 	double max_err;
+	int existErr;
 	
 	struct SDC_dataset *next;	
 } SDC_dataset;
@@ -106,6 +107,8 @@ struct timeval costStart; //only used for recording the cost
 double totalCost;
 
 
+int SDC_LoadConf();
+
 int SDC_Init_nonMPI(); //only for dubugging with single process
 int SDC_Init_serial(char *configFile);
 int SDC_Init(char *configFile, MPI_Comm globalComm);
@@ -117,5 +120,6 @@ void SDC_PrintDetectResult();
 void cost_start();
 void cost_end();
 void print_Cost_Ratio();
+void incrementFPNum();
 
 #endif /* ----- #ifndef _SDC_DETECTOR_H  ----- */

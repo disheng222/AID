@@ -523,3 +523,9 @@ void print_cost_ratio_c_()
 {
 	print_Cost_Ratio();
 }
+
+void sdc_increment_fpnum_c_()
+{
+	incrementFPNum();
+}
+
