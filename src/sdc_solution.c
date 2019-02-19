@@ -1056,7 +1056,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
 							abs_err = abs_(pred_final - var_int[i]);
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							if(abs_err > threshold)
 							{
 								existError = 1;
@@ -1078,7 +1078,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 3*XT_1_int[index]-3*XT_2_int[index]+XT_3_int[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_int[index]);
 								if(abs_err > threshold)
 								{
@@ -1102,7 +1102,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 3*XT_1_int[index]-3*XT_2_int[index]+XT_3_int[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_int[index]);
 									if(abs_err > threshold)
 									{
@@ -1127,7 +1127,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 3*XT_1_int[index]-3*XT_2_int[index]+XT_3_int[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_int[index]);
 										if(abs_err > threshold)
 										{
@@ -1153,7 +1153,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 										pred_final = pred_v1 = 3*XT_1_int[index]-3*XT_2_int[index]+XT_3_int[index];
 										if(sdc_manager.sol_ID==SDC_AID)
 										{
-											threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+											threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 											abs_err = abs_(pred_final - var_int[index]);
 											if(abs_err > threshold)
 											{
@@ -1186,7 +1186,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 						pred_final = pred_v1 = 3*XT_1_float[i]-3*XT_2_float[i]+XT_3_float[i];
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							abs_err = abs_(pred_final - var_float[i]);
 							if(abs_err > threshold)
 							{
@@ -1209,7 +1209,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 3*XT_1_float[index]-3*XT_2_float[index]+XT_3_float[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_float[index]);
 								if(abs_err > threshold)
 								{
@@ -1233,7 +1233,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 3*XT_1_float[index]-3*XT_2_float[index]+XT_3_float[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_float[index]);
 									if(abs_err > threshold)
 									{
@@ -1258,7 +1258,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 3*XT_1_float[index]-3*XT_2_float[index]+XT_3_float[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_float[index]);
 										if(abs_err > threshold)
 										{
@@ -1284,7 +1284,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 										pred_final = pred_v1 = 3*XT_1_float[index]-3*XT_2_float[index]+XT_3_float[index];
 										if(sdc_manager.sol_ID==SDC_AID)
 										{
-											threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+											threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 											abs_err = abs_(pred_final - var_float[index]);
 											if(abs_err > threshold)
 											{
@@ -1317,7 +1317,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 						pred_final = pred_v1 = 3*XT_1_double[i]-3*XT_2_double[i]+XT_3_double[i];
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							abs_err = abs_(pred_final - var_double[i]);
 							if(abs_err > threshold)
 							{
@@ -1340,7 +1340,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 3*XT_1_double[index]-3*XT_2_double[index]+XT_3_double[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_double[index]);
 								if(abs_err > threshold)
 								{
@@ -1364,7 +1364,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 3*XT_1_double[index]-3*XT_2_double[index]+XT_3_double[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_double[index]);
 									if(abs_err > threshold)
 									{
@@ -1389,7 +1389,7 @@ int quadraticCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 3*XT_1_double[index]-3*XT_2_double[index]+XT_3_double[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_double[index]);
 										if(abs_err > threshold)
 										{
@@ -1493,7 +1493,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 						pred_final = pred_v1 = 2*XT_1_int[i]-XT_2_int[i];
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							abs_err = abs_(pred_final - var_int[i]);
 							if(abs_err > threshold)
 							{
@@ -1516,7 +1516,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 2*XT_1_int[index]-XT_2_int[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_int[index]);
 								if(abs_err > threshold)
 								{
@@ -1540,7 +1540,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 2*XT_1_int[index]-XT_2_int[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_int[index]);
 									if(abs_err > threshold)
 									{
@@ -1565,7 +1565,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 2*XT_1_int[index]-XT_2_int[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_int[index]);
 										if(abs_err > threshold)
 										{
@@ -1591,7 +1591,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 										pred_final = pred_v1 = 2*XT_1_int[index]-XT_2_int[index];
 										if(sdc_manager.sol_ID==SDC_AID)
 										{
-											threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+											threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 											abs_err = abs_(pred_final - var_int[index]);
 											if(abs_err > threshold)
 											{
@@ -1623,7 +1623,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 						pred_final = pred_v1 = 2*XT_1_float[i]-XT_2_float[i];
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							abs_err = abs_(pred_final - var_float[i]);
 							if(abs_err > threshold)
 							{
@@ -1646,7 +1646,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 2*XT_1_float[index]-XT_2_float[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_float[index]);
 								if(abs_err > threshold)
 								{
@@ -1670,7 +1670,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 2*XT_1_float[index]-XT_2_float[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_float[index]);
 									if(abs_err > threshold)
 									{
@@ -1695,7 +1695,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 2*XT_1_float[index]-XT_2_float[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_float[index]);
 										if(abs_err > threshold)
 										{
@@ -1721,7 +1721,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 										pred_final = pred_v1 = 2*XT_1_float[index]-XT_2_float[index];
 										if(sdc_manager.sol_ID==SDC_AID)
 										{
-											threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+											threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 											abs_err = abs_(pred_final - var_float[index]);
 											if(abs_err > threshold)
 											{
@@ -1753,7 +1753,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 						pred_final = pred_v1 = 2*XT_1_double[i]-XT_2_double[i];
 						if(sdc_manager.sol_ID==SDC_AID)
 						{
-							threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+							threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 							abs_err = abs_(pred_final - var_double[i]);
 							if(abs_err > threshold)
 							{
@@ -1776,7 +1776,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 							pred_final = pred_v1 = 2*XT_1_double[index]-XT_2_double[index];
 							if(sdc_manager.sol_ID==SDC_AID)
 							{
-								threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+								threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 								abs_err = abs_(pred_final - var_double[index]);
 								if(abs_err > threshold)
 								{
@@ -1800,7 +1800,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 								pred_final = pred_v1 = 2*XT_1_double[index]-XT_2_double[index];
 								if(sdc_manager.sol_ID==SDC_AID)
 								{
-									threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+									threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 									abs_err = abs_(pred_final - var_double[index]);
 									if(abs_err > threshold)
 									{
@@ -1825,7 +1825,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 									pred_final = pred_v1 = 2*XT_1_double[index]-XT_2_double[index];
 									if(sdc_manager.sol_ID==SDC_AID)
 									{
-										threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+										threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 										abs_err = abs_(pred_final - var_double[index]);
 										if(abs_err > threshold)
 										{
@@ -1851,7 +1851,7 @@ int linearCurveFitting(SDC_dataset *pp, void* var)
 										pred_final = pred_v1 = 2*XT_1_double[index]-XT_2_double[index];
 										if(sdc_manager.sol_ID==SDC_AID)
 										{
-											threshold = sdc_manager.impact_err_bound_ratio*pp->value_range*pp->FPNum;
+											threshold = pp->FPNum*(pp->max_err + sdc_manager.impact_err_bound_ratio*pp->value_range);
 											abs_err = abs_(pred_final - var_double[index]);
 											if(abs_err > threshold)
 											{

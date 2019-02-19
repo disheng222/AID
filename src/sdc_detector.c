@@ -272,7 +272,7 @@ double computeTotalElapsedTime()
 	 return elapsed;
 }
 
-void incrementFPNum()
+void SDC_Increment_FPNum()
 {
 	SDC_dataset *pp = dataset_head->next;
 	while(pp!=NULL)

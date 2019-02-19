@@ -120,6 +120,6 @@ void SDC_PrintDetectResult();
 void cost_start();
 void cost_end();
 void print_Cost_Ratio();
-void incrementFPNum();
+void SDC_Increment_FPNum();
 
 #endif /* ----- #ifndef _SDC_DETECTOR_H  ----- */

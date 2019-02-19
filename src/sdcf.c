@@ -526,6 +526,6 @@ void print_cost_ratio_c_()
 
 void sdc_increment_fpnum_c_()
 {
-	incrementFPNum();
+	SDC_Increment_FPNum();
 }
 
