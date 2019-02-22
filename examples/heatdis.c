@@ -246,6 +246,8 @@ int main(int argc, char *argv[])
         localerror = doWork(nbProcs, rank, M, nbLines, g, h);
         sdc_result=SDC_Snapshot(); /////////////detector
 	SDC_SetMark(i,sdc_result); /////////////detector
+	if(sdc_result!=0)
+		SDC_Increment_FPNum();
 /*	if(i%1000==0)
 	{
                PAPI_get_dmem_info(&dmem);
