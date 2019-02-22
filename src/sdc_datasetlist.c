@@ -34,6 +34,7 @@ void malloc_dataset(SDC_dataset** dataset, int data_type, int dim, int r5, int r
 //	int total_size;
 //	int sampLength;
 	*dataset = (SDC_dataset *)malloc(sizeof(SDC_dataset));
+	memset(*dataset, 0, sizeof(SDC_dataset));
 	(*dataset)->data_type = data_type;
 	(*dataset)->dim = dim;
 	(*dataset)->r5 = r5;
@@ -521,12 +522,13 @@ int computeSampLength(SDC_dataset *set)
 	return length;
 }
 
-void adaptive_updateData(SDC_dataset *set, void* data)
+void adaptive_updateData(SDC_dataset *set, void* data, int existErr)
 {
 	SDC_data *newData;
 	int modStep, steps_required, curStepLength, i, to_delete;
 	int sampLength;
 	modStep = counter%sdc_manager.check_bestfit_rate;
+	set->existErr = existErr;
 		
 	steps_required = compute_steps_required(modStep, set); //if steps_required == 2 and bestorder==0, then we need 1 extra step (sample data)
 	//complement the steps_required by sample data sets

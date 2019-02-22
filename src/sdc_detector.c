@@ -163,7 +163,7 @@ int sdc_snapshot_1var_F(SDC_dataset *pp, void* var)
 				exit(0);
 		}
 	}
-	adaptive_updateData(pp, var);
+	adaptive_updateData(pp, var, existErr);
 				
 	return existError;	
 }
@@ -182,10 +182,6 @@ int SDC_Snapshot()
 	while(pp!=NULL)
 	{
 		existError = sdc_snapshot_1var_F(pp, pp->var);
-		if(existError==1)
-		{
-			pp->existErr = 1;
-		}
 		//move pp
 		pp = pp->next;	
 	}

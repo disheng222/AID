@@ -108,6 +108,7 @@ double totalCost;
 
 
 int SDC_LoadConf();
+void adaptive_updateData(SDC_dataset *set, void* data, int existErr);
 
 int SDC_Init_nonMPI(); //only for dubugging with single process
 int SDC_Init_serial(char *configFile);
