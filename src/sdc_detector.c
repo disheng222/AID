@@ -163,7 +163,7 @@ int sdc_snapshot_1var_F(SDC_dataset *pp, void* var)
 				exit(0);
 		}
 	}
-	adaptive_updateData(pp, var, existErr);
+	adaptive_updateData(pp, var, existError);
 				
 	return existError;	
 }
