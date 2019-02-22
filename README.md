@@ -9,7 +9,7 @@ In Makefile, replace [AID_INSTALL_PATH] by AID path, and replace [MPI_INSTALL_PA
 
 For example,
 
-AIDPATH         = /home/shdi/aid-0.1
+AIDPATH         = /home/shdi/aid-0.2
 
 MPIPATH         = /home/shdi/mpich-install
 
@@ -45,5 +45,7 @@ Replace [AID_INSTALL_PATH] by your own AID path, such as
 SDCPATH         = /home/shdi/aid-0.1/SDC
 
 Note: Don't miss the "SDC" in the end of the above SDCPATH.
+
+Note: In order to reproduce the results in our TPDS paper, you need to use SDC_Increment_FPNum(). Please see Formula (6) of the TPDS paper for details, or user-guide.
 
 ------------------
