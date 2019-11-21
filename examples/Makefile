@@ -2,7 +2,7 @@
 ##   Makefile to test SDC library with the heat distribution program.
 
 ##   PLEASE SET THIS VARIABLE BEFORE COMPILING
-SDCPATH		= /home/fti/AID/aid-0.2/SDC
+SDCPATH		= [AID_INSTALL_PATH]
 #example: SDCPATH = /home/shdi/aid-0.1/SDC
 
 ##   COMPILERS
@@ -13,7 +13,7 @@ MPIRUN 		= mpirun
 # Compiling using shared library
 #SDCFLAG 	= -I$(SDCPATH)/include -L$(SDCPATH)/lib -lsdc -lm
 # Compiling using static library
-SDCFLAG 	= -I$(SDCPATH)/include $(SDCPATH)/lib/libsdc.a
+SDCFLAG 	= -I$(SDCPATH)/include $(SDCPATH)/lib/libsdc.a -O3
 
 ##   TARGETS
 all: 		hd simple_c_4d simple_fortran_5d simple_fortran_4d simple_fortran_3d simple_fortran_2d simple_fortran_1d

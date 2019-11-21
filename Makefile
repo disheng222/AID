@@ -9,7 +9,7 @@
 ##   PLEASE SET THESE VARIABLES BEFORE COMPILING
 ##=======================================================================
 
-AIDPATH         = [AID_INSTALL_PATH]
+AIDPATH         = [AID_INSTALL_PATH] 
 #AIDPATH         = /home/sdi/Development/AID/aid-0.2
 #example: AIDPATH = /home/shdi/aid-0.1
 MPIPATH		= [MPI_INSTALL_PATH]
@@ -37,7 +37,7 @@ MPICC 		= mpicc
 ##   FLAGS
 ##=======================================================================
 
-SDCFLAGS	= -fPIC -g -Iinclude/ -c
+SDCFLAGS	= -fPIC -g -Iinclude/ -c -O3
 MPIFLAGS	= -I$(MPIPATH)
 
 ##=======================================================================
