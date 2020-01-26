@@ -532,7 +532,7 @@ void adaptive_updateData(SDC_dataset *set, void* data, int existErr)
 		
 	steps_required = compute_steps_required(modStep, set); //if steps_required == 2 and bestorder==0, then we need 1 extra step (sample data)
 	//complement the steps_required by sample data sets
-	if(steps_required>0&&modStep<=steps_required) //insert a sample data set
+	if(steps_required>0 && modStep>=StartStepNum-3 && modStep<=steps_required) //insert a sample data set
 	{
 		sampLength = computeSampLength(set);	
 		malloc_data(&newData, set->data_type, set->dim, set->r5, set->r4, set->r3, set->r2, set->r1);
