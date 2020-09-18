@@ -1,5 +1,5 @@
 # AID
-Adaptive Impact-driven Silent Data Corruption Dector for HPC applications
+Adaptive Impact-driven Silent Data Corruption Detector for HPC applications
 
 INSTALL:
 
@@ -32,6 +32,9 @@ make install
 Note: If your mpi application program is coded in Fortran, you don't have to modify Makefile any more. If your mpi application is coded in C, you need to comment out the following line in the Makefile.
                         $(OBJ)/sdcf.o $(OBJ)/sdc_interface.o $(OBJ)/fort_writefile.o \
 
+Reference: 
+
+Sheng Di, Franck Cappello, "Adaptive-Impact Driven Detection of Silent Data Corruption for HPC Applications, " in IEEE Transactions on Parallel and Distributed Computing (IEEE TPDS), 2016. http://www.mcs.anl.gov/~shdi/download/impact-driven-sdc.pdf
 
 =====================================================================
 TEST:
